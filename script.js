@@ -3,10 +3,9 @@ const hoursElement = document.getElementById("hours");
 const minutesElement = document.getElementById("minutes");
 const secondsElement = document.getElementById("seconds");
 
-const countdownDate = new Date("October 2, 2024 00:00:00").getTime(); // Set your target date/time here
+const countdownDate = new Date("October 1, 2024 17:00:00").getTime(); // Set your target date/time here
 
 const countdownElements = document.getElementById("countdown-elements");
-const startButton = document.getElementById("start-button");
 
 function updateCountdown() {
   const currentTime = new Date().getTime();
@@ -36,6 +35,11 @@ function updateCountdown() {
 
 const countdownInterval = setInterval(updateCountdown, 1000); // Update every second
 
+/*
+ * The following code is optional. It adds a "Start" button that allows the user
+ * to start the countdown timer manually.
+ */
+const startButton = document.getElementById("start-button");
 startButton.addEventListener("click", () => {
   countdownElements.classList.remove("hidden");
   startButton.classList.add("hidden"); // Hide the button after starting
